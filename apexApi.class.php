@@ -33,7 +33,7 @@ class apexApi
     }
 
     function debugMode(){
-    	$this->_http->debug = true;
+        $this->_http->debug = true;
     }
 
     function testMode(){
@@ -49,16 +49,16 @@ class apexApi
         $ar = explode('_', $api);
         $action = implode('.', $ar);
   
-    	$request_data = array(    		
-    		'v' => $this->version,
-    		'appid' => $this->client_key,
-    		'method' => $action,
+        $request_data = array(          
+            'v' => $this->version,
+            'appid' => $this->client_key,
+            'method' => $action,
             'uuid'  => $this->uuid,
             'platform' => $this->platform,
             '_timestamp' => time(),
-    	);
+        );
 
-    	$data = array_merge($data,$request_data);
-		return  $this->_http->oAuthRequest($data,$mothed,$ef_return);
+        $data = array_merge($data,$request_data);
+        return  $this->_http->oAuthRequest($data,$mothed,$ef_return);
     }
 }
