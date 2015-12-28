@@ -9,6 +9,7 @@
 	$apex = new \apexApi(KEY, SECRET, HOST);
     $apex->uuid = microtime();
     $api = 'third.membercard.uploadAvatar';
-    $data['card_no'] = $card_no;
+    
+    $data['post'] = 'post';
     $data['img'] = '@'.$file_name;
     $ret = $apex->api($api,$data,'POST',true);
